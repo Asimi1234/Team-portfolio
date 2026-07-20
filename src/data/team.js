@@ -23,7 +23,7 @@ export const team = [
     id: "member-1",
     name: "Asimi Israel",
     role: "Team Lead / Full-Stack Developer",
-    photoUrl: "[INSERT PHOTO URL]",
+    photoUrl: "/asimi.jpg",
 
     vision: {
       goal: "Become a full-stack software engineer who can take a product from an idea to something people actually use, and eventually lead an engineering team of my own.",
@@ -64,8 +64,8 @@ export const team = [
   {
     id: "member-2",
     name: "Idowu Mustapha Ayomide",
-    role: "Frontend & UI Developer",
-    photoUrl: "[INSERT PHOTO URL]",
+    role: "Frontend Developer",
+    photoUrl: "/mustapha.jpg",
     vision: {
       goal: "Become a frontend engineer who also understands design, so I can build interfaces that look good and are genuinely easy to use.",
       roadmap: [
@@ -102,114 +102,114 @@ export const team = [
   {
     id: "member-3",
     name: "Habeeb Quadri",
-    role: "Backend & API Developer",
-    photoUrl: "[INSERT PHOTO URL]",
+    role: "Frontend Developer",
+    photoUrl: "/quadri.jpg",
     vision: {
-      goal: "Become a backend engineer who's trusted to build the parts of a system that have to stay up and keep data safe.",
+      goal: "Become a frontend developer who's good at the tricky parts, connecting interfaces to real data and making busy screens like dashboards and forms feel simple.",
       roadmap: [
-        "Next 1-2 years: get solid with Node.js and databases, and build a few APIs the rest of my team actually uses.",
-        "3-5 years: work as a backend developer and learn how real systems handle a lot of users at once.",
-        "5-10 years: move towards a backend or platform engineering role, with some cloud work mixed in.",
+        "Next 1-2 years: get really solid with React and how the frontend talks to APIs, and build a few data-heavy interfaces.",
+        "3-5 years: work as a frontend developer on a product with a lot of moving parts.",
+        "5-10 years: grow into a senior frontend role, owning big features end to end.",
       ],
       ambition:
-        "I want to be the person a team relies on when something important has to work correctly every single time.",
+        "I want to take a screen that looks intimidating, full of data and options, and turn it into something people can use without thinking.",
     },
     alignment: {
       support:
-        "I build and maintain the APIs and the database side of our projects. Fixing things that break in front of real users has taught me more than any lecture, because there's no partial marks when the login stops working.",
+        "On the web team I build the parts of our pages that pull in data and react to what the user does. Wiring the frontend up to real APIs on live projects has taught me where things break and how to handle it.",
       leverage:
-        "Every API I build here I document and push to GitHub, so I'm slowly building a public track record of backend work I can show.",
+        "Every feature I build here I document and push to GitHub, so I'm slowly building a public track record of frontend work I can show.",
       gaps: [
-        "Writing secure code that handles bad input safely",
-        "Designing databases that won't be painful to change later",
+        "Managing state cleanly as an interface gets more complex",
+        "Handling loading, empty, and error states properly",
       ],
     },
     industry: {
       dreamCompany: "Flutterwave or Interswitch",
-      focus: "Software / Fintech Backend",
-      why: "Fintech backends have to be correct and secure, and I like that kind of pressure. When money is involved the engineering has to be serious, and that pushes you to get better.",
+      focus: "Software / Frontend",
+      why: "Fintech apps have busy, data-heavy screens that still have to be clear and correct. I like that challenge, making something complicated feel calm and simple to use.",
     },
     skills: {
-      current: ["Node.js & Express", "SQL and database basics", "Reading and fixing other people's bugs"],
-      toDevelop: ["Authentication & security", "Caching and performance", "Basic cloud deployment"],
+      current: ["JavaScript & React", "Connecting frontends to APIs", "Reading and fixing other people's bugs"],
+      toDevelop: ["State management (React Query / Redux)", "Frontend performance", "TypeScript"],
       actionPlan:
-        "Before graduation I want to build one properly secured API with authentication, learn to deploy it to a cloud service myself, and study how common security mistakes happen so I can avoid them.",
+        "Before graduation I want to build one data-heavy interface that handles loading and error states properly, learn a state-management tool, and start using TypeScript on my projects.",
     },
   },
 
   {
     id: "member-4",
-    name: "Ziyad",
-    role: "Database & Deployment",
+    name: "Akayin-o de Ziyad",
+    role: "Frontend & UI/UX Designer",
     photoUrl: "[INSERT PHOTO URL]",
     vision: {
-      goal: "Become an engineer who keeps projects running smoothly behind the scenes, from the database to how the app gets deployed and tested.",
+      goal: "Become a UI/UX designer who can both design an interface and build it, so good ideas don't get lost on the way from design to code.",
       roadmap: [
-        "Next 1-2 years: learn database design and the basics of deployment properly, and set up good version-control habits on every project.",
-        "3-5 years: work in a role that touches databases, testing, or DevOps, and get comfortable with cloud tools.",
-        "5-10 years: grow into a DevOps or data-focused engineering role.",
+        "Next 1-2 years: get fluent in Figma and the fundamentals of design, and turn a few of my own designs into working pages.",
+        "3-5 years: work as a UI/UX or product designer on a team that actually ships real products.",
+        "5-10 years: grow into a senior product designer, or lead the design side of a small team.",
       ],
       ambition:
-        "I want to be the reason a team ships without drama, where deployments are boring because everything just works.",
+        "I want someone to use something I designed and feel like it just makes sense, without anyone having to explain it to them.",
     },
     alignment: {
       support:
-        "On the web team I look after the database and help get our work online. Setting up deployments and catching bugs before they reach users has shown me the side of software that class never really covers.",
+        "On the web team I plan how our pages should look and flow before anyone writes code, then help build them. Watching real users get confused (or not) has taught me more about design than any tutorial.",
       leverage:
-        "I keep notes on every setup and deployment process I learn here, so I can repeat it quickly and have something concrete to talk about in interviews.",
+        "I keep my wireframes, mockups, and the before-and-after of every redesign, which is slowly turning into a design portfolio I can show employers.",
       gaps: [
-        "Automating the repetitive setup and deployment steps",
-        "Testing properly instead of just clicking around to check",
+        "Backing up my design choices with real user feedback",
+        "Keeping a consistent design system as a project grows",
       ],
     },
     industry: {
-      dreamCompany: "Andela or a cloud-focused company",
-      focus: "Software / DevOps & Data",
-      why: "I enjoy the infrastructure side more than the front-facing part. Companies that run many projects at once need people who keep everything organised and running, and that suits how I think.",
+      dreamCompany: "A product-led company with a real design team",
+      focus: "Software / UI/UX Design",
+      why: "I want to work somewhere design has a seat at the table, not where it's an afterthought bolted on at the end. That's where the products people actually enjoy come from.",
     },
     skills: {
-      current: ["Database design (SQL)", "Git and version control", "Spotting bugs and edge cases"],
-      toDevelop: ["CI/CD and automation", "Cloud platforms (AWS basics)", "Writing automated tests"],
+      current: ["Figma and wireframing", "Visual and layout design", "Turning designs into responsive pages"],
+      toDevelop: ["User research and testing", "Design systems", "Prototyping and interaction design"],
       actionPlan:
-        "I plan to set up an automated deploy pipeline for one of our projects, learn the basics of a cloud platform, and build the habit of writing tests instead of checking everything by hand.",
+        "Before graduation I want to run a small usability test on one of our projects, build a reusable design system in Figma, and prototype a full app flow from start to finish.",
     },
   },
 
   {
     id: "member-5",
-    name: "Dollar Richie",
-    role: "QA & Testing",
-    photoUrl: "[INSERT PHOTO URL]",
+    name: "Taiwo Olaoye",
+    role: "Frontend Developer",
+    photoUrl: "/olaoye.jpg",
     vision: {
-      goal: "Become a software engineer known for shipping work that doesn't break, by taking testing and quality seriously from the start.",
+      goal: "Become a frontend developer known for building interfaces that don't break, ones that are accessible, well tested, and work for everyone.",
       roadmap: [
-        "Next 1-2 years: learn how to test software properly and get comfortable finding problems before users do.",
-        "3-5 years: work as a developer or QA engineer on a team that genuinely cares about quality.",
-        "5-10 years: grow into a role where I help set how a whole team tests and ships its work.",
+        "Next 1-2 years: get comfortable with React and learn how to test the interfaces I build.",
+        "3-5 years: work as a frontend developer on a team that cares about quality and accessibility.",
+        "5-10 years: grow into a senior frontend role where I help set how the team builds and tests its UI.",
       ],
       ambition:
-        "I want to be the person who catches the bug everyone else missed, before it ever reaches a real user.",
+        "I want to be the person whose features just work, on every device and for every user, the first time.",
     },
     alignment: {
       support:
-        "On the web team I test our features across different phones and browsers and report what's broken before we release. Doing this on real projects has taught me to think about all the ways something can go wrong.",
+        "On the web team I build features and then test them hard across different phones and browsers before we ship. Doing both on real projects has taught me to build things properly the first time.",
       leverage:
-        "I keep a record of the bugs I've found and how they got fixed, which is turning into a solid story about my eye for detail that I can share with employers.",
+        "I keep a record of the bugs I've caught and how I fixed them, which is turning into a solid story about my eye for detail that I can share with employers.",
       gaps: [
-        "Writing automated tests instead of checking everything by hand",
-        "Reproducing tricky bugs reliably so they can be fixed",
+        "Writing automated tests for the components I build",
+        "Making interfaces accessible for everyone, not just the average user",
       ],
     },
     industry: {
-      dreamCompany: "A product company with a strong QA culture",
-      focus: "Software / Quality Assurance",
-      why: "I'd rather work somewhere that treats quality as part of engineering, not an afterthought. Those are the teams that build things people actually trust.",
+      dreamCompany: "A product company that cares about quality",
+      focus: "Software / Frontend",
+      why: "I want to work somewhere that treats a solid, accessible interface as part of the job, not an afterthought. Those are the teams that build things people actually trust.",
     },
     skills: {
-      current: ["Manual testing across devices", "Attention to detail", "Clear, useful bug reports"],
-      toDevelop: ["Automated testing tools", "Basic scripting for tests", "Reading code well enough to test it deeper"],
+      current: ["HTML, CSS & React basics", "Testing across devices", "Clear, useful bug reports"],
+      toDevelop: ["Automated component testing", "Accessibility (a11y)", "TypeScript"],
       actionPlan:
-        "Before graduation I want to learn a testing framework, write automated tests for one of our projects, and get better at reading code so I can test it more thoroughly.",
+        "Before graduation I want to build a few polished, accessible components, write automated tests for them, and get comfortable checking my work against accessibility guidelines.",
     },
   },
 ];

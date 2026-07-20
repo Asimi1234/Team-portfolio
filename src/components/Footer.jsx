@@ -31,17 +31,6 @@ export default function Footer() {
         <Card className="mx-auto max-w-3xl">
           <CardContent className="grid gap-6 p-8 sm:grid-cols-2">
             <div className="flex items-start gap-4">
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
-                <Mail className="h-5 w-5" />
-              </span>
-              <div>
-                <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                  Email
-                </p>
-                <p className="font-semibold">{site.contact.email}</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
               <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/10 text-accent">
                 <Building className="h-5 w-5" />
               </span>
@@ -63,7 +52,7 @@ export default function Footer() {
                 <p className="font-semibold">{site.university.name}</p>
               </div>
             </div>
-            <div className="flex items-center sm:justify-end">
+            <div className="flex items-center justify-center sm:col-span-2">
               <Button
                 as="a"
                 href={site.university.url}
@@ -133,7 +122,7 @@ export default function Footer() {
 
           <div className="mt-10 border-t border-border pt-6 text-center text-sm text-muted-foreground">
             <p>
-              © {year} {site.brandName}. Made by the {site.university.name} SIWES
+              © {site.brandName}. Made by the {site.university.name} SIWES
               group.
             </p>
           </div>

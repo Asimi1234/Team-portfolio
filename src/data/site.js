@@ -4,7 +4,7 @@
    ═══════════════════════════════════════════════════════════════════ */
 
 export const site = {
-  brandName: "SIWES Portfolio 2024",
+  brandName: "SIWES Portfolio 2025",
 
   // Prominent logo shown in the hero + navbar.
   // Replace with your school crest, e.g. "/logo.png" placed in /public.
@@ -26,8 +26,7 @@ export const site = {
   ],
 
   contact: {
-    email: "[INSERT GROUP EMAIL]", // e.g. "siwes.group@oou.edu.ng"
     department: "Department of Computer Engineering",
-    session: "2024 SIWES Group",
+    session: "2025 SIWES Group",
   },
 };
