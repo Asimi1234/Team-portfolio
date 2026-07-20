@@ -7,6 +7,8 @@ import {
   Circle,
   Sparkles,
   Factory,
+  GraduationCap,
+  Hash,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 
@@ -86,7 +88,8 @@ function BlueprintCard({ icon: Icon, title, accent = "primary", children }) {
  * team member. Rendered inside each Tab.
  */
 export default function MemberBlueprint({ member }) {
-  const { name, role, photoUrl, vision, alignment, industry, skills } = member;
+  const { name, role, level, matric, photoUrl, vision, alignment, industry, skills } =
+    member;
 
   return (
     <div className="space-y-6">
@@ -103,6 +106,22 @@ export default function MemberBlueprint({ member }) {
             <p className="mt-1 inline-block rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-primary">
               {role}
             </p>
+            {(level || matric) && (
+              <div className="mt-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs font-medium text-muted-foreground sm:justify-start">
+                {level && (
+                  <span className="inline-flex items-center gap-1.5">
+                    <GraduationCap className="h-3.5 w-3.5" />
+                    {level} Level
+                  </span>
+                )}
+                {matric && (
+                  <span className="inline-flex items-center gap-1.5">
+                    <Hash className="h-3.5 w-3.5" />
+                    {matric}
+                  </span>
+                )}
+              </div>
+            )}
           </div>
         </CardContent>
       </Card>

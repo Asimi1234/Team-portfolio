@@ -23,6 +23,8 @@ export const team = [
     id: "member-1",
     name: "Asimi Israel",
     role: "Team Lead / Full-Stack Developer",
+    level: "200",
+    matric: "EES/24/25/0254",
     photoUrl: "/asimi.jpg",
 
     vision: {
@@ -65,6 +67,8 @@ export const team = [
     id: "member-2",
     name: "Idowu Mustapha Ayomide",
     role: "Frontend Developer",
+    level: "200",
+    matric: "EES/24/25/0417",
     photoUrl: "/mustapha.jpg",
     vision: {
       goal: "Become a frontend engineer who also understands design, so I can build interfaces that look good and are genuinely easy to use.",
@@ -103,6 +107,8 @@ export const team = [
     id: "member-3",
     name: "Habeeb Quadri",
     role: "Frontend Developer",
+    level: "200",
+    matric: "EES/24/25/0399",
     photoUrl: "/quadri.jpg",
     vision: {
       goal: "Become a frontend developer who's good at the tricky parts, connecting interfaces to real data and making busy screens like dashboards and forms feel simple.",
@@ -141,6 +147,8 @@ export const team = [
     id: "member-4",
     name: "Akayin-ode Ziyad",
     role: "Frontend & UI/UX Designer",
+    level: "200",
+    matric: "EES/24/25/0181",
     photoUrl: "/ziyad.jpg",
     vision: {
       goal: "Become a UI/UX designer who can both design an interface and build it, so good ideas don't get lost on the way from design to code.",
@@ -179,6 +187,8 @@ export const team = [
     id: "member-5",
     name: "Taiwo Olaoye",
     role: "Frontend Developer",
+    level: "200",
+    matric: "EES/24/25/0850",
     photoUrl: "/olaoye.jpg",
     vision: {
       goal: "Become a frontend developer known for building interfaces that don't break, ones that are accessible, well tested, and work for everyone.",
