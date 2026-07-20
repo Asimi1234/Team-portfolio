@@ -17,12 +17,107 @@ a shadcn/ui Tabs component, and React Router.
 
 ## Getting started
 
+If you already have this project folder (with its `package.json`), everything is
+installed with a single command:
+
 ```bash
-npm install     # install dependencies
+npm install     # install all dependencies listed in package.json
 npm run dev     # start the dev server (http://localhost:5173)
 npm run build   # production build into /dist
 npm run preview # preview the production build
 ```
+
+## Installing from scratch
+
+If you're recreating the project from an empty folder — or you just want to know
+exactly what's installed and why — here are the full steps.
+
+### 0. Prerequisites
+- **Node.js 18+** and **npm** (check with `node -v` and `npm -v`)
+
+### 1. Create the Vite + React app
+
+```bash
+npm create vite@latest siwes-portfolio -- --template react
+cd siwes-portfolio
+```
+
+### 2. Install the runtime dependencies
+
+```bash
+npm install react-router-dom @radix-ui/react-tabs lucide-react \
+  class-variance-authority clsx tailwind-merge
+```
+
+| Package | Why it's here |
+|---------|---------------|
+| `react-router-dom` | Router setup (the app is wrapped in `BrowserRouter`) |
+| `@radix-ui/react-tabs` | The accessible primitive behind the shadcn/ui Tabs (Team section) |
+| `lucide-react` | All the icons |
+| `class-variance-authority` | Button variants/sizes (`buttonVariants`) |
+| `clsx` + `tailwind-merge` | The `cn()` helper in `src/lib/utils.js` that merges class names |
+
+### 3. Install and configure Tailwind CSS
+
+```bash
+npm install -D tailwindcss@3 postcss autoprefixer
+npx tailwindcss init -p          # creates tailwind.config.js + postcss.config.js
+```
+
+Then set the content paths in **`tailwind.config.js`** so Tailwind scans your files:
+
+```js
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.{js,jsx}"],
+  theme: { extend: {} },
+  plugins: [],
+};
+```
+
+> This project's `tailwind.config.js` also maps the colour tokens (emerald/teal/
+> slate) and adds the fade-in animations — see the existing file for the full setup.
+
+Add the Tailwind directives to the **top of `src/index.css`**:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+`postcss.config.js` (created by the `-p` flag) wires Tailwind into the build:
+
+```js
+export default {
+  plugins: { tailwindcss: {}, autoprefixer: {} },
+};
+```
+
+### 4. Add the `@` import alias (used by the shadcn components)
+
+Imports like `@/lib/utils` and `@/components/ui/tabs` need an alias. In
+**`vite.config.js`**:
+
+```js
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import path from "path";
+
+export default defineConfig({
+  plugins: [react()],
+  resolve: { alias: { "@": path.resolve(__dirname, "./src") } },
+});
+```
+
+### 5. Run it
+
+```bash
+npm run dev
+```
+
+That reproduces the exact toolchain this project uses: **Vite 5, React 18,
+Tailwind CSS 3, React Router 6, Radix Tabs, and lucide-react.**
 
 ## Changing the content
 
