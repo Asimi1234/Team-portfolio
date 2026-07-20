@@ -69,7 +69,7 @@ export const team = [
     role: "Frontend Developer",
     level: "200",
     matric: "EES/24/25/0417",
-    photoUrl: "[INSERT PHOTO URL]",
+    photoUrl: "/idowu.jpg",
     vision: {
       goal: "Become a frontend engineer who also understands design, so I can build interfaces that look good and are genuinely easy to use.",
       roadmap: [

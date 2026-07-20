@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Mission from "./components/Mission";
 import Team from "./components/Team";
+import Coordinator from "./components/Coordinator";
 import Footer from "./components/Footer";
 
 /**
@@ -16,6 +17,7 @@ export default function App() {
         <Hero />
         <Mission />
         <Team />
+        <Coordinator />
       </main>
       <Footer />
     </div>

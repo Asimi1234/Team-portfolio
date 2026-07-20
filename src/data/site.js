@@ -17,6 +17,15 @@ export const site = {
     resourcesLabel: "Visit University Resources",
   },
 
+  // SIWES coordinator shown in its own section.
+  // Add a photo: drop the file in /public and set photoUrl to "/afeez.jpg".
+  // Leave the placeholder to show a person-icon avatar until then.
+  coordinator: {
+    name: "Engr Afeez",
+    title: "SIWES Coordinator",
+    photoUrl: "/afeez.jpg",
+  },
+
   // Navbar + footer links. `href` values are the section ids below.
   nav: [
     { label: "Home", href: "#hero" },
