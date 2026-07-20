@@ -8,7 +8,7 @@ export const site = {
 
   // Prominent logo shown in the hero + navbar.
   // Replace with your school crest, e.g. "/logo.png" placed in /public.
-  schoolLogoUrl: "[INSERT SCHOOL LOGO URL]", // e.g. "/oou-logo.png"
+  schoolLogoUrl: "/oou-logo.jpeg", // file lives in /public
 
   university: {
     name: "Olabisi Onabanjo University",
