@@ -139,9 +139,9 @@ export const team = [
 
   {
     id: "member-4",
-    name: "Akayin-o de Ziyad",
+    name: "Akayin-ode Ziyad",
     role: "Frontend & UI/UX Designer",
-    photoUrl: "[INSERT PHOTO URL]",
+    photoUrl: "/ziyad.jpg",
     vision: {
       goal: "Become a UI/UX designer who can both design an interface and build it, so good ideas don't get lost on the way from design to code.",
       roadmap: [
