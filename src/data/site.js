@@ -37,6 +37,7 @@ export const site = {
   nav: [
     { label: "Home", href: "#hero" },
     { label: "Mission", href: "#mission" },
+    { label: "Journey", href: "#roadmap" },
     { label: "Team", href: "#team" },
     { label: "Contact", href: "#contact" },
   ],

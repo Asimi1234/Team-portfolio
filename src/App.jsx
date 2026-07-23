@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import StatsBand from "./components/StatsBand";
 import Mission from "./components/Mission";
+import Roadmap from "./components/Roadmap";
 import Team from "./components/Team";
 import Coordinator from "./components/Coordinator";
 import Footer from "./components/Footer";
@@ -18,6 +19,7 @@ export default function App() {
         <Hero />
         <StatsBand />
         <Mission />
+        <Roadmap />
         <Team />
         <Coordinator />
       </main>
