@@ -86,7 +86,7 @@ export default function MemberBlueprint({ member }) {
   return (
     <div className="space-y-6">
       {/* a) Bio Header */}
-      <Card className="overflow-hidden hover:translate-y-0 hover:shadow-sm">
+      <Card className="overflow-hidden hover:translate-y-0 hover:border-border hover:shadow-sm">
         <div className="h-24 bg-gradient-to-r from-[#1E2938] to-[#16A349]" />
         <CardContent className="flex flex-col items-center gap-4 pb-6 text-center sm:flex-row sm:items-end sm:text-left">
           {/* Only the avatar overlaps the banner; name + role sit below it */}

@@ -17,7 +17,7 @@ export default function Hero() {
       id="hero"
       className="relative w-full px-3 pb-3 pt-[4.75rem] sm:px-4 sm:pb-4 sm:pt-[5.5rem]"
     >
-      <div className="relative flex min-h-[88vh] w-full flex-col items-center justify-center overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0a0d12] px-6 py-24 text-center sm:rounded-[2rem]">
+      <div className="relative flex min-h-[88svh] w-full flex-col items-center justify-center overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0a0d12] px-6 py-24 text-center sm:rounded-[2rem]">
         {/* Fine grid, faded toward the edges */}
         <div
           className="pointer-events-none absolute inset-0"
@@ -85,14 +85,14 @@ export default function Hero() {
           >
             <a
               href="#team"
-              className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white px-7 text-sm font-semibold text-neutral-900 transition-colors hover:bg-white/90"
+              className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white px-7 text-sm font-semibold text-neutral-900 transition-colors hover:bg-white/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0d12]"
             >
               Meet Our Team
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </a>
             <a
               href="#mission"
-              className="inline-flex h-12 items-center justify-center rounded-full border border-white/20 bg-white/[0.03] px-7 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+              className="inline-flex h-12 items-center justify-center rounded-full border border-white/20 bg-white/[0.03] px-7 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0d12]"
             >
               Why SIWES Matters
             </a>
