@@ -14,23 +14,55 @@
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
 
-    --primary: 161 94% 30%; /* emerald */
+    --primary: 142 76% 36%; /* #16A349 — green: icons, text, badges, links */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 215 25% 35%; /* slate blue */
+    --secondary: 215 30% 17%; /* #1E2938 — dark slate: CTA button, stat numbers */
     --secondary-foreground: 0 0% 100%;
 
     --muted: 210 40% 96%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: 175 84% 32%; /* teal */
+    --accent: 142 71% 45%; /* #21C55E — bright green: headline shine + accents */
     --accent-foreground: 0 0% 100%;
+
+    --icon: 97 82% 11%; /* #173405 — deep forest green: icon glyphs */
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 161 94% 30%;
+    --ring: 142 76% 36%;
 
     --radius: 0.85rem;
+  }
+
+  /* Dark scheme — activated by the `dark` class on <html>.
+     Same emerald/teal brand, tuned for a deep slate canvas. */
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 40% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --primary: 142 69% 45%; /* brighter green so it glows on dark */
+    --primary-foreground: 222 47% 6%;
+
+    /* Near-white on dark so the CTA button + stat numbers stay legible. */
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 217 33% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 142 72% 52%; /* brighter green */
+    --accent-foreground: 222 47% 6%;
+
+    /* #173405 is unreadable on dark; use the brand green so icons stay visible */
+    --icon: 142 69% 45%;
+
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 142 69% 45%;
   }
 
   * {
@@ -46,5 +78,43 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "cv11", "ss01";
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  h1, h2, h3 {
+    font-family: theme("fontFamily.display");
+  }
+}
+
+@layer utilities {
+  /* Scroll-reveal: hidden until .is-visible is added by the Reveal observer. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Only hint while animating in — released once revealed so we don't
+       hold a compositor layer per element for the life of the page. */
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
+}
+
+/* Respect users who prefer less motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

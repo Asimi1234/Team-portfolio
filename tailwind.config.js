@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,jsx}"],
+  darkMode: "class",
   theme: {
     container: {
       center: true,
@@ -16,6 +17,7 @@ export default {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
+        icon: "hsl(var(--icon))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
@@ -46,6 +48,8 @@ export default {
       },
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["Sora", "Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        serif: ['"Instrument Serif"', "ui-serif", "Georgia", "serif"],
       },
       keyframes: {
         "fade-in-up": {
@@ -58,8 +62,8 @@ export default {
         },
       },
       animation: {
-        "fade-in-up": "fade-in-up 0.6s ease-out both",
-        "fade-in": "fade-in 0.5s ease-out both",
+        "fade-in-up": "fade-in-up 0.7s cubic-bezier(0.16,1,0.3,1) both",
+        "fade-in": "fade-in 0.6s ease-out both",
       },
     },
   },

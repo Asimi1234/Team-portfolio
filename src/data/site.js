@@ -10,8 +10,15 @@ export const site = {
   // Replace with your school crest, e.g. "/logo.png" placed in /public.
   schoolLogoUrl: "/oou-logo.jpeg", // file lives in /public
 
+  // SIWES session/cohort year, shown in the stats band.
+  session: "2025",
+  // The team the group was placed with, shown in the stats band.
+  placementTeam: "Web Dev",
+
   university: {
     name: "Olabisi Onabanjo University",
+    // Short form (initials) used where space is tight, e.g. the stats band.
+    shortName: "OOU",
     // Official site / resources page students should be directed to.
     url: "https://oouagoiwoye.edu.ng",
     resourcesLabel: "Visit University Resources",
@@ -36,6 +43,5 @@ export const site = {
 
   contact: {
     department: "Department of Computer Engineering",
-    session: "2025 SIWES Group",
   },
 };

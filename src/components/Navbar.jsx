@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
-import { Button } from "./ui/button";
+import ThemeToggle from "./ThemeToggle";
 import { site } from "@/data/site";
 import { cn } from "@/lib/utils";
 
@@ -43,45 +43,40 @@ export default function Navbar() {
           onClick={(e) => handleNavClick(e, "#hero")}
           className="flex items-center gap-3"
         >
-          <Logo size={40} />
-          <span className="text-base font-extrabold tracking-tight sm:text-lg">
+          <Logo size={34} />
+          <span className="text-sm font-semibold tracking-tight sm:text-base">
             {site.brandName}
           </span>
         </a>
 
         {/* Desktop links */}
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-8 md:flex">
           {site.nav.map((item) => (
             <a
               key={item.href}
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
-              className="rounded-lg px-4 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               {item.label}
             </a>
           ))}
-          <Button
-            as="a"
-            href="#team"
-            onClick={(e) => handleNavClick(e, "#team")}
-            size="sm"
-            className="ml-2"
-          >
-            Meet Our Team
-          </Button>
+          <ThemeToggle className="-mr-2" />
         </div>
 
-        {/* Mobile toggle */}
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          className="grid h-10 w-10 place-items-center rounded-lg text-foreground hover:bg-muted md:hidden"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        {/* Mobile controls */}
+        <div className="flex items-center gap-1 md:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            className="grid h-10 w-10 place-items-center rounded-lg text-foreground hover:bg-muted"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile menu */}
@@ -91,25 +86,17 @@ export default function Navbar() {
           open ? "max-h-96" : "max-h-0 border-b-0"
         )}
       >
-        <div className="container flex flex-col gap-1 py-4">
+        <div className="container flex flex-col py-2">
           {site.nav.map((item) => (
             <a
               key={item.href}
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
-              className="rounded-lg px-4 py-3 text-base font-semibold text-foreground transition-colors hover:bg-muted"
+              className="border-b border-border py-3.5 text-base font-medium text-foreground last:border-b-0"
             >
               {item.label}
             </a>
           ))}
-          <Button
-            as="a"
-            href="#team"
-            onClick={(e) => handleNavClick(e, "#team")}
-            className="mt-2 w-full"
-          >
-            Meet Our Team
-          </Button>
         </div>
       </div>
     </header>

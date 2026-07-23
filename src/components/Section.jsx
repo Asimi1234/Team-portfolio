@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import Reveal from "./Reveal";
 
 /**
  * Section — consistent vertical rhythm + anchor id + optional eyebrow/title.
@@ -21,26 +22,26 @@ export default function Section({
   containerClassName,
 }) {
   return (
-    <section id={id} className={cn("scroll-mt-20 py-20 md:py-28", className)}>
+    <section id={id} className={cn("scroll-mt-24 py-24 md:py-36", className)}>
       <div className={cn("container", containerClassName)}>
         {(eyebrow || title || subtitle) && (
-          <div className="mx-auto mb-14 max-w-2xl text-center animate-fade-in-up">
+          <Reveal className="mx-auto mb-14 max-w-2xl text-center md:mb-16">
             {eyebrow && (
-              <span className="mb-3 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary">
+              <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary">
                 {eyebrow}
               </span>
             )}
             {title && (
-              <h2 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl">
+              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
                 {title}
               </h2>
             )}
             {subtitle && (
-              <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+              <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">
                 {subtitle}
               </p>
             )}
-          </div>
+          </Reveal>
         )}
         {children}
       </div>

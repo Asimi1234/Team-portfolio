@@ -13,32 +13,26 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 
 /**
- * Avatar — member photo with initials fallback while the placeholder
- * URL is in place.
+ * Avatar — member photo with initials fallback while the placeholder URL
+ * is in place.
  */
 function Avatar({ name, photoUrl }) {
   const isPlaceholder = !photoUrl || photoUrl.includes("[");
-  const initials = isPlaceholder
-    ? "?"
-    : name
-        .split(" ")
-        .map((w) => w[0])
-        .filter(Boolean)
-        .slice(0, 2)
-        .join("")
-        .toUpperCase();
+  const initials =
+    name && !name.includes("[")
+      ? name
+          .split(" ")
+          .map((w) => w[0])
+          .filter(Boolean)
+          .slice(0, 2)
+          .join("")
+          .toUpperCase()
+      : "?";
 
   if (isPlaceholder) {
     return (
-      <div className="grid h-28 w-28 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-primary to-accent text-3xl font-extrabold text-primary-foreground shadow-lg ring-4 ring-card">
-        {name && !name.includes("[")
-          ? name
-              .split(" ")
-              .map((w) => w[0])
-              .join("")
-              .slice(0, 2)
-              .toUpperCase()
-          : "?"}
+      <div className="grid h-28 w-28 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-[#1E2938] to-[#16A349] text-3xl font-extrabold text-white shadow-lg ring-4 ring-card">
+        {initials}
       </div>
     );
   }
@@ -53,14 +47,12 @@ function Avatar({ name, photoUrl }) {
 }
 
 /**
- * BlueprintCard — a titled section within a member's portfolio.
- * `accent` maps to static classes so Tailwind's JIT can detect them
- * (dynamically-built class strings get purged, so we use a lookup).
+ * BlueprintCard — a titled section within a member's portfolio. `accent`
+ * maps to static classes so Tailwind's JIT can detect them.
  */
 const ACCENTS = {
-  primary: "bg-primary/10 text-primary",
-  accent: "bg-accent/10 text-accent",
-  secondary: "bg-secondary/10 text-secondary",
+  primary: "bg-primary/10 text-icon",
+  accent: "bg-accent/10 text-icon",
 };
 
 function BlueprintCard({ icon: Icon, title, accent = "primary", children }) {
@@ -84,8 +76,8 @@ function BlueprintCard({ icon: Icon, title, accent = "primary", children }) {
 }
 
 /**
- * MemberBlueprint — full "Personal Career Blueprint Portfolio" for one
- * team member. Rendered inside each Tab.
+ * MemberBlueprint — full "Personal Career Blueprint" for one team member,
+ * rendered inside each Tab.
  */
 export default function MemberBlueprint({ member }) {
   const { name, role, level, matric, photoUrl, vision, alignment, industry, skills } =
@@ -94,16 +86,16 @@ export default function MemberBlueprint({ member }) {
   return (
     <div className="space-y-6">
       {/* a) Bio Header */}
-      <Card className="overflow-hidden">
-        <div className="h-24 bg-gradient-to-r from-primary to-accent" />
+      <Card className="overflow-hidden hover:translate-y-0 hover:shadow-sm">
+        <div className="h-24 bg-gradient-to-r from-[#1E2938] to-[#16A349]" />
         <CardContent className="flex flex-col items-center gap-4 pb-6 text-center sm:flex-row sm:items-end sm:text-left">
-          {/* Only the avatar overlaps the banner; name + role sit below it on white */}
+          {/* Only the avatar overlaps the banner; name + role sit below it */}
           <div className="-mt-20">
             <Avatar name={name} photoUrl={photoUrl} />
           </div>
           <div className="pb-1">
             <h3 className="text-2xl font-extrabold tracking-tight">{name}</h3>
-            <p className="mt-1 inline-block rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-primary">
+            <p className="mt-1 inline-block rounded-full bg-secondary/10 px-3 py-1 text-sm font-semibold text-icon">
               {role}
             </p>
             {(level || matric) && (
@@ -137,7 +129,7 @@ export default function MemberBlueprint({ member }) {
           <ol className="mb-4 space-y-2">
             {vision.roadmap.map((step, i) => (
               <li key={i} className="flex gap-3">
-                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-primary/10 text-[11px] font-bold text-primary">
+                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-primary/10 text-[11px] font-bold text-icon">
                   {i + 1}
                 </span>
                 <span>{step}</span>
@@ -171,9 +163,9 @@ export default function MemberBlueprint({ member }) {
         </BlueprintCard>
 
         {/* d) Industry Guide */}
-        <BlueprintCard icon={Building2} title="Industry Guide" accent="secondary">
+        <BlueprintCard icon={Building2} title="Industry Guide" accent="primary">
           <div className="mb-3 flex flex-wrap gap-2">
-            <span className="inline-flex items-center gap-1.5 rounded-lg bg-secondary/10 px-3 py-1.5 text-xs font-bold text-secondary">
+            <span className="inline-flex items-center gap-1.5 rounded-lg bg-primary/10 px-3 py-1.5 text-xs font-bold text-icon">
               <Target className="h-3.5 w-3.5" />
               {industry.dreamCompany}
             </span>
@@ -191,7 +183,7 @@ export default function MemberBlueprint({ member }) {
         </BlueprintCard>
 
         {/* e) Skill Roadmap */}
-        <BlueprintCard icon={ListChecks} title="Skill Roadmap" accent="primary">
+        <BlueprintCard icon={ListChecks} title="Skill Roadmap" accent="accent">
           <p className="mb-2 text-xs font-bold uppercase tracking-wider text-foreground/70">
             Current Strengths
           </p>
@@ -199,7 +191,7 @@ export default function MemberBlueprint({ member }) {
             {skills.current.map((s, i) => (
               <span
                 key={i}
-                className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary"
+                className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-icon"
               >
                 <CheckCircle2 className="h-3.5 w-3.5" />
                 {s}

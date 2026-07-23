@@ -8,14 +8,25 @@
       name="description"
       content="A record of our group's SIWES industrial training placements: where we worked, what we learned, and where we're headed."
     />
-    <!-- Inter font (self-hostable / swappable). Remove if bundling locally. -->
+    <!-- Inter (body), Sora (display headings), Instrument Serif (italic accent). -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&family=Instrument+Serif:ital@0;1&display=swap"
       rel="stylesheet"
     />
-    <title>SIWES Portfolio 2024</title>
+    <!-- Set theme before paint to avoid a flash of the wrong color scheme -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("theme");
+          if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+            document.documentElement.classList.add("dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <title>SIWES Portfolio 2025</title>
   </head>
   <body>
     <div id="root"></div>

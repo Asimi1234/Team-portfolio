@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import StatsBand from "./components/StatsBand";
 import Mission from "./components/Mission";
 import Team from "./components/Team";
 import Coordinator from "./components/Coordinator";
@@ -15,6 +16,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <StatsBand />
         <Mission />
         <Team />
         <Coordinator />

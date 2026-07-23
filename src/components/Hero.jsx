@@ -1,83 +1,101 @@
-import { ArrowRight, Users } from "lucide-react";
-import Logo from "./Logo";
-import { Button } from "./ui/button";
+import { ArrowRight } from "lucide-react";
 import { site } from "@/data/site";
 
 /**
- * Hero — headline, prominent logo, mission subheading, and CTA that
- * smooth-scrolls to the Team section. Background uses a soft gradient
- * + subtle grid pattern.
+ * Hero — a framed dark canvas: a fine grid, a soft green glow, and the OOU
+ * crest faded into the corner. Centered content pairs a clean sans line with
+ * a serif-italic accent, above a badge and two CTAs.
  */
 export default function Hero() {
-  const scrollToTeam = (e) => {
-    e.preventDefault();
-    document.querySelector("#team")?.scrollIntoView({ behavior: "smooth" });
-  };
+  const step = (i) => ({ animationDelay: `${i * 100}ms` });
+
+  const crest = site.schoolLogoUrl;
+  const hasCrest = crest && !crest.includes("[");
 
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center overflow-hidden pt-16"
+      className="relative w-full px-3 pb-3 pt-[4.75rem] sm:px-4 sm:pb-4 sm:pt-[5.5rem]"
     >
-      {/* Background: gradient + subtle grid */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary/5 via-background to-background" />
-      <div
-        className="absolute inset-0 -z-10 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            "linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
-        }}
-      />
-      {/* Glow blobs */}
-      <div className="absolute -left-24 top-24 -z-10 h-72 w-72 rounded-full bg-primary/20 blur-3xl" />
-      <div className="absolute -right-24 bottom-24 -z-10 h-72 w-72 rounded-full bg-accent/20 blur-3xl" />
+      <div className="relative flex min-h-[88vh] w-full flex-col items-center justify-center overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0a0d12] px-6 py-24 text-center sm:rounded-[2rem]">
+        {/* Fine grid, faded toward the edges */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.55) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.55) 1px, transparent 1px)",
+            backgroundSize: "56px 56px",
+            opacity: 0.07,
+            maskImage:
+              "radial-gradient(ellipse 75% 60% at 50% 35%, black 25%, transparent 100%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 75% 60% at 50% 35%, black 25%, transparent 100%)",
+          }}
+        />
+        {/* Soft green glow behind the headline */}
+        <div className="pointer-events-none absolute left-1/2 top-1/4 h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-primary/20 blur-[120px]" />
 
-      <div className="container py-20 text-center">
-        <div className="mx-auto flex max-w-3xl flex-col items-center">
-          {/* Prominent logo */}
-          <div className="animate-fade-in-up">
-            <Logo size={88} className="shadow-xl" />
-          </div>
+        {/* Faded OOU crest, clipped into the top-right corner */}
+        {hasCrest && (
+          <img
+            src={crest}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-10 -top-10 h-64 w-64 select-none object-contain opacity-[0.13] grayscale invert sm:h-80 sm:w-80"
+            style={{
+              maskImage:
+                "radial-gradient(circle at 60% 40%, black 45%, transparent 78%)",
+              WebkitMaskImage:
+                "radial-gradient(circle at 60% 40%, black 45%, transparent 78%)",
+            }}
+          />
+        )}
 
-          <span className="mt-8 inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary shadow-sm animate-fade-in-up">
-            <Users className="h-3.5 w-3.5" />
-            {site.contact.session}
+        {/* Content */}
+        <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center">
+          <span
+            className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.04] px-5 py-2 text-xs font-semibold uppercase tracking-widest text-white/80 backdrop-blur animate-fade-in-up"
+            style={step(0)}
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+            {site.contact.department}
           </span>
 
-          <h1 className="mt-6 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl animate-fade-in-up">
+          <h1
+            className="mt-8 font-display text-5xl font-bold leading-[1.04] tracking-tight text-white sm:text-6xl md:text-7xl animate-fade-in-up"
+            style={step(1)}
+          >
             From lecture notes to{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              real code
+            <span className="font-serif text-[1.1em] font-normal italic text-accent">
+              real code.
             </span>
           </h1>
 
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl animate-fade-in-up">
-            We're a group of Computer Engineering students at {site.university.name},
-            doing our SIWES on the school's web development team. This is a record of
-            what we built, what we actually learned, and where each of us is headed
-            next.
+          <p
+            className="mt-7 max-w-xl text-lg leading-relaxed text-white/55 animate-fade-in-up"
+            style={step(2)}
+          >
+            Where we did our SIWES on the school's web team — what we built, what
+            we learned, and where each of us is headed next.
           </p>
 
-          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row animate-fade-in-up">
-            <Button as="a" href="#team" onClick={scrollToTeam} size="lg">
+          <div
+            className="mt-10 flex flex-col items-center gap-3 sm:flex-row animate-fade-in-up"
+            style={step(3)}
+          >
+            <a
+              href="#team"
+              className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white px-7 text-sm font-semibold text-neutral-900 transition-colors hover:bg-white/90"
+            >
               Meet Our Team
-              <ArrowRight className="h-5 w-5" />
-            </Button>
-            <Button
-              as="a"
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </a>
+            <a
               href="#mission"
-              onClick={(e) => {
-                e.preventDefault();
-                document
-                  .querySelector("#mission")
-                  ?.scrollIntoView({ behavior: "smooth" });
-              }}
-              variant="outline"
-              size="lg"
+              className="inline-flex h-12 items-center justify-center rounded-full border border-white/20 bg-white/[0.03] px-7 text-sm font-semibold text-white transition-colors hover:bg-white/10"
             >
               Why SIWES Matters
-            </Button>
+            </a>
           </div>
         </div>
       </div>

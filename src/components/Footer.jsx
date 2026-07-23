@@ -1,4 +1,4 @@
-import { Mail, Building, ExternalLink, GraduationCap } from "lucide-react";
+import { Building, ExternalLink, GraduationCap } from "lucide-react";
 import Section from "./Section";
 import Logo from "./Logo";
 import { Button } from "./ui/button";
@@ -6,13 +6,11 @@ import { Card, CardContent } from "./ui/card";
 import { site } from "@/data/site";
 
 /**
- * Contact section + site Footer.
- * The Contact block is a distinct section (anchor #contact); the footer
- * below it holds quick nav, copyright, and the university resource link.
+ * Contact section + site Footer. The Contact block is a distinct section
+ * (anchor #contact); the footer below holds quick nav, copyright, and the
+ * university resource link.
  */
 export default function Footer() {
-  const year = 2024; // static — the "SIWES Portfolio 2024" cohort year
-
   const scrollTo = (e, href) => {
     e.preventDefault();
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
@@ -25,13 +23,13 @@ export default function Footer() {
         id="contact"
         eyebrow="Get In Touch"
         title="Contact Our Group"
-        subtitle="Got a question about our placements, or want to work together? Send us a message."
+        subtitle="A question about our placements, or want to work together? Reach out."
         className="bg-muted/40"
       >
         <Card className="mx-auto max-w-3xl">
           <CardContent className="grid gap-6 p-8 sm:grid-cols-2">
             <div className="flex items-start gap-4">
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/10 text-accent">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/10 text-icon">
                 <Building className="h-5 w-5" />
               </span>
               <div>
@@ -42,7 +40,7 @@ export default function Footer() {
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-secondary/10 text-secondary">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-primary/10 text-icon">
                 <GraduationCap className="h-5 w-5" />
               </span>
               <div>
@@ -122,8 +120,7 @@ export default function Footer() {
 
           <div className="mt-10 border-t border-border pt-6 text-center text-sm text-muted-foreground">
             <p>
-              © {site.brandName}. Made by the {site.university.name} SIWES
-              group.
+              © {site.brandName}. Made by the {site.university.name} SIWES group.
             </p>
           </div>
         </div>
